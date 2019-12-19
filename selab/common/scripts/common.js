@@ -192,12 +192,12 @@ $(function(){
 })
 
 //function for save,
-function saveorder() {
-  var temp = document.getElementById("sortable");
-  var order = temp.innerHTML;
-
-  document.getElementById("saveOr").value = order;
-}
+// function saveorder() {
+//   var temp = document.getElementById("sortable");
+//   var order = temp.innerHTML;
+//
+//   document.getElementById("saveOr").value = order;
+// }
 
 function savemenu() {
   var temp = document.getElementsByClassName("ui-sortable");
@@ -212,8 +212,8 @@ function logout(){
 
 function startup() {
   navigation();
-  saveorder();
-  Request();
+  //saveorder();
+  //Request();
 }
 
 window.onload = startup;
