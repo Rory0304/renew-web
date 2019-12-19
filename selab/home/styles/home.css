@@ -1,0 +1,43 @@
+h1{
+	margin-top: 15px;
+}
+
+.menu {
+	width: 1145px;
+	height: 458px;
+	z-index: 1;
+	margin: 80px auto;
+}
+
+#sortable {
+	width: 687px;
+	height:100%;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+#sortable a {
+	width: 229px;
+	height: 229px;
+	font-weight: 400;
+	color: white;
+	float: left;
+	margin: 0;
+	text-align: center;
+	line-height: 229px;
+	color: white;
+}
+
+#ind {
+	width: 458px;
+	height: 458px;
+	margin: 0;
+	float: left;
+	line-height: 458px;
+	text-align: center;
+}
+
+#res:hover, #gal:hover, #pub:hover, #mem:hover, #not:hover, #cou:hover {
+	background-color: black;
+}

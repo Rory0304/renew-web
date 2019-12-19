@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from selab.hanyang.ac.kr/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Nov 2019 07:38:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8" />
+	<title>Software Engineering Lab - Home</title>
+	<link rel="stylesheet" href="common/styles/reset-1.6.1.css" type="text/css" />
+	<link rel="stylesheet" href="common/styles/common.css" type="text/css" />
+	<link rel="shortcut icon" href="common/images/SelabFavicon.png" type="image/png">
+	<link rel="stylesheet" href="home/styles/home.css" type="text/css" />
+	<link rel="stylesheet" id = "backcss" href="common/styles/theme1.css" type="text/css" />
+
+	<script type="text/javascript" src="common/scripts/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="common/scripts/jquery-ui.js"></script>
+	<script type="text/javascript" src="common/scripts/buffered-keyup.js"></script>
+	<script type="text/javascript" src="home/scripts/changeOrder.js"></script>
+	<script type="text/javascript" src="common/scripts/common.js"></script>
+	<script type="text/javascript" src="common/scripts/loadsetting.js"></script>
+	
+	<script type="text/javascript">
+		jQuery.noConflict();
+		var j$ = jQuery;
+	</script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+	<?php
+		session_start();
+	?>
+	<header role="banner">
+		<nav>
+			<div id="logo" class="pull-left">
+				<a href="index.html"><img src="common/images/selab_logo_S.png" alt="logo"/></a>
+			</div>
+			<a id="setting" class="pull-right" href="javascript:settingview();"> <img src="common/images/color_lens-24px.svg" alt="customize"/> </a>
+			<div role="login" class="pull-right">
+				<?php
+					if(isset($_SESSION["ID"])){ ?>
+						<a href="login/logout.php"> <img src="common/images/logout.svg" alt="logout" onclick="logout()"> </a>
+					<?php }else{ ?>
+						<a href="login/index4e7d.html"> <img src="common/images/vpn_key-24px.svg" alt="login"> </a>
+					<?php
+					}
+				?>
+			</div>
+			<a id="contact" href="contact/index.html" class='pull-right'> <img src="common/images/phone-24px.svg" alt="contact"> </a>
+		</nav>
+	</header>
+
+	<div id="settingtab">
+		<a href="javascript:void(0)" class="closebtn" onclick="closesetting()">&times;</a>
+		<div id="sample">
+			<div id="samplePage">
+				<div id="SampleH">
+					<div id="SampleH1">
+						<p>[lab];</p>
+					</div>
+					<div id="SampleH2">
+						<p>notice members research ...</p>
+					</div>
+				</div>
+				<div id="sampleC">
+					<h1>sample</h1>
+					<p>This is sample to help your costomizing. I hope you satisfied whith our wepsite.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="option">
+			<form action="savemain.php" method="post">
+				<div id="font">
+					<p>Font</p>
+					<input id="saveOr" type="text" value="" name="order" style="display: none;">
+					<select id="fontselect" name="selectFontFamily" onchange="fontupdate('fontstyle');">
+						<option style="font-family:Serif" value="serif"> Serif </option>
+						<option style="font-family:Tahoma" value="Tahoma"> Tahoma </option>
+						<option style="font-family:Arial" value="Arial"> Arial </option>
+						<option style="font-family:Monospace" value="Monospace">Monospace</option>
+						<option style="font-family:Roboto" value="Roboto">Roboto</option>
+						<option style="font-family:Times New Roman" value="Times New Roman">Times New Roman</option>
+						<option style="font-family:Garamond" value="Garamond">Garamond</option>
+						<option style="font-family:Comic Sans MS" value="Comic Sans MS">Comic Sans MS</option>
+						<option style="font-family:Courier" value="Courier">Courier</option>
+						<option style="font-family:Impact" value="Impact">Impact</option>
+					</select>
+					<p>Font Size</p>
+					<select id="fontsizeSlect" name="selectfontsize" onchange="fontupdate('sizeC');">
+						<option style="font-size: 15px">Small</option>
+						<option style="font-size: 20px" selected>Normal</option>
+						<option style="font-size: 25px">Medium</option>
+						<option style="font-size: 30px">Large</option>
+						<option style="font-size: 35px">Huge</option>
+					</select>
+				</div>
+				<div id="background">
+					<p>Background</p>
+					<select id="backselect" name="selectBackground" onchange="backupdate();">
+						<option value="1"> Theme1 </option>
+						<option value="2"> Theme2</option>
+						<option value="3"> Theme3 </option>
+						<option value="4"> Theme4 </option>
+						<option value="5"> Theme5 </option>
+					</select>
+				</div>
+				<input id="submit" type="submit" value="save" onclick="saveorder();">
+			</form>
+		</div>
+	</div>
+
+	<div id="main">
+		<div class="container">
+			<div class="menu">
+				<a id = 'ind' href="index.html"><img src="common/images/selab_logo_S_2.png" /></a>
+				<div id ="sortable">
+					<a id='not' href="notice/index.html">NOTICE</a>
+					<a id='mem' href="members/index.html">MEMBERS</a>
+					<a id='res' href="research/index.html" >RESEARCH</a>
+					<a id='pub' href="publications/index.html" >PUBLICATIONS</a>
+					<a id='cou' href="courses/index.html" >COURSES</a>
+					<a id='gal' href="gallery/index.html" >GALLERY</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer role="contentinfo">
+		<div class="container">
+			<p>COPYRIGHT 2019 SELAB, ALL RIGHTS RESERVED. COMPUTER SCIENECE AND ENGINEERING, HANYANG UNIV. LOCATION: ENGINEERING BUILDING #3, ROOM 421. T +82-31-400-4754</p>
+		</div>
+	</footer>
+</body>
+
+<!-- Mirrored from selab.hanyang.ac.kr/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Nov 2019 07:38:16 GMT -->
+</html>

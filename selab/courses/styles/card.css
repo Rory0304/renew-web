@@ -1,0 +1,295 @@
+#team {
+  margin: 0 auto;
+}
+
+#team .teamMenu {
+  height: 50px;
+  background-color: white;
+  overflow: hidden;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+#team .teamMenu #by {
+  margin-left: 20px;
+  width: 100px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#team .teamMenu a {
+  margin: 0 10px;
+}
+
+img {
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+.this-page {
+  margin: 0 10px;
+  margin-top: 14px;
+}
+
+#team .team_none {
+  height: 270px;
+  margin-bottom: 25px;
+}
+
+#team .team {
+  display: block;
+  float: none;
+  height: 340px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.cards {
+  display: inline-block;
+  width: 100%;
+  padding-top: 25px;
+  background-color: #fff4d1;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width : 200px;
+  height: 270px;
+  text-align: center;
+  background-color: white;
+  float: left;
+  margin-bottom: 25px;
+  position:relative;
+}
+
+.card .card_inner {
+  top: 0;
+  margin: 0;
+}
+
+.card .card_inner p {
+  padding: 0;
+  line-height: 1.2;
+  margin: 5px auto;
+}
+
+.card .card_inner p.card_t {
+  margin: 10px auto;
+  font-weight: bold;
+}
+
+.card .card_but {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.card button:hover, a:hover {
+  opacity: 0.7;
+}
+
+.langOptions{
+  margin-bottom: 25px;
+}
+
+.langOption{
+ margin: 5px;
+ text-align: center;
+ background-color: white;
+ width: 100px;
+ height: 40px;
+ border: solid 0px;
+ border-radius: 50px 50px;
+ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ font-weight: bold;
+ color: black;
+ transition: 0.3s;
+ -webkit-transition-duration: 0.4s; /* Safari */
+ transition-duration: 0.4s;
+}
+
+.selectedlangOption{
+  margin: 5px;
+  text-align: center;
+  background-color: black;
+  width: 100px;
+  height: 40px;
+  border: solid 0px;
+  border-radius: 50px 50px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-weight: bold;
+  color: white;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.langOption:hover{
+  background-color: black;
+  transform: scale(1.2) perspective(1px);
+  color: white;
+}
+
+.selectedlangOption:hover{
+ transform: scale(1.2) perspective(1px)
+}
+
+.mypage, .myteam, .message {
+  padding: 10px 20px 20px;
+  background-color: white;
+}
+
+div.myinf, form.langOptions {
+  padding-left: 10px;
+}
+
+span {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.mypage p {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.langlist {
+  line-height: 2;
+  margin-left: 20px;
+}
+
+input[type=text] {
+  padding: 5px 5px;
+  border: 1px solid #6e6e6e;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px 5px;
+}
+
+.inputcon {
+  display: inline-block;
+}
+
+input[type=checkbox] {
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.langlast {
+  margin-left: 25px;
+}
+
+div.teamname {
+  margin-left: 20px;
+}
+
+div.mteamname, div.git, div.teammember{
+  display: block;
+  padding-left: 20px;
+  line-height: 2;
+}
+
+ul:not(.inline-list) {
+  padding-left: 30px;
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+input[type=submit], button[type=submit].submit, button {
+  padding: 14px 20px;
+  margin: 8px 0;
+  background-color: #6e6e6e;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border : none;
+}
+
+input[type=submit]:hover, button[type=submit].submit:hover, button:hover {
+  opacity: 0.8;
+}
+
+.center {
+  text-align: center;
+}
+
+hr.div {
+  margin: 0;
+}
+
+.mestitle {
+  margin: 10px 0 20px;
+}
+
+#mes_get ul, #mes_send ul{
+  clear: both;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#mes_get li, #mes_send li {
+  box-sizing: border-box;
+  list-style: none;
+  line-height: 35px;
+}
+
+#mes_get li.person, #mes_send li.person {
+  width: 33.3%;
+  border-right: 1px solid #dfdfdf;
+  text-align: center;
+}
+
+#mes_get li.time, #mes_send li.time {
+  width: 33.3%;
+  border-right: 1px solid #dfdfdf;
+  text-align: center;
+}
+
+#mes_get li.but, #mes_send li.but {
+  width: 33.3%;
+  text-align: center;
+}
+
+#mes_get li.but input, #mes_send li.but input {
+  padding: 5px 20px;
+  margin: 0;
+}
+
+#mes_get .subject li, #mes_send .subject {
+  background-color: #C4C4C4;
+  height: 38px;
+  color: white;
+  border-bottom: 3px solid #dfdfdf;
+}
+
+#mes_get .mes li, #mes_send .mes li {
+  background-color: white;
+  height: 35px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+#mes_get .mes:nth-child(odd) li, #mes_send .mes:nth-child(even) li {
+  background-color: #f5f5f5;
+}
