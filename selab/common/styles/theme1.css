@@ -7,11 +7,11 @@
 }
 */
 
-header[role="banner"] #menu li a{
+header[role="banner"] #menu li a, #sideNav div.nav-list-right a{
     color: #fe4a49;
 }
 
-header[role="banner"] div[role="login"] a:hover, header[role="banner"] #menu li a:hover, header[role="banner"] #menu li a.selected, #contact:hover, #setting:hover, .selected, div[role="login"] a:hover {
+header[role="banner"] div[role="login"] a:hover, header[role="banner"] #menu li a:hover, header[role="banner"] #menu li a.selected, #contact:hover, #setting:hover, .selected, div[role="login"] a:hover, #sideNav .nav-list-left #sideSetting:hover, #sideNav .nav-list-left #sideContact:hover, #sideNav .nav-list-right a.selected, #sideNav .nav-list-right a:hover {
 	background-color: #fe4a49;
 }
 

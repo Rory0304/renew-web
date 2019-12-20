@@ -6,11 +6,11 @@
 	background-color: #9BD7D1;
 }
 
-header[role="banner"] #menu li a{
+header[role="banner"] #menu li a, #sideNav div.nav-list-right a{
     color: #9BD7D1;
 }
 
-header[role="banner"] div[role="login"] a:hover, header[role="banner"] #menu li a:hover, header[role="banner"] #menu li a.selected, #contact:hover, #setting:hover, .selected, div[role="login"] a:hover {
+header[role="banner"] div[role="login"] a:hover, header[role="banner"] #menu li a:hover, header[role="banner"] #menu li a.selected, #contact:hover, #setting:hover, .selected, div[role="login"] a:hover, #sideNav .nav-list-left #sideSetting:hover, #sideNav .nav-list-left #sideContact:hover, #sideNav .nav-list-right a.selected, #sideNav .nav-list-right a:hover {
 	background-color: #9BD7D1;
 }
 
