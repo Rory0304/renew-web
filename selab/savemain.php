@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    isset($_POST["nav"]) {$nav = $_POST["nav"];}
+    if(isset($_POST["nav"])) {$nav = $_POST["nav"];}
     else {$nav = 'top';}
     $font = $_POST["selectFontFamily"];
     $fontsize = $_POST["selectfontsize"];
