@@ -207,16 +207,43 @@ function savemenu() {
 }
 
 function changeForm(nav,font,fontsize,background) {
-  console.log(nav);
   var navArr = document.getElementsByName("nav");
-  console.log("aa");
   for (var i=0; i<navArr.length; i++) {
-    console.log(navArr[i].value);
     if (navArr[i].value == nav) {
       navArr[i].checked = true;
     }
     else { navArr[i].checked = false; }
   }
+
+  var fontMother = document.getElementById("fontselect");
+  var fontC = fontMother.childNodes;
+  for(var j=0; j<fontC.length; j++) {
+    if (fontC[j].value == font) {
+      fontC[j].setAttribute( 'selected', 'selected' );
+    }
+    else { fontC[i].removeAttribute( "selected" ); }
+  }
+  fontupdate('fontstyle');
+
+  var fontsizeMother = document.getElementById("fontsizeSlect");
+  var fontsizeC = fontsizeMother.childNodes;
+  for(var j=0; j<fontsizeC.length; j++) {
+    if (fontsizeC[j].value == fontsize) {
+      fontsizeC[j].setAttribute( 'selected', 'selected' );
+    }
+    else { fontsizeC[i].removeAttribute( "selected" ); }
+  }
+  fontupdate('sizeTC');
+
+  var bgMother = document.getElementById("backselect");
+  var bgC = bgMother.childNodes;
+  for(var j=0; j<bgC.length; j++) {
+    if (bgC[j].value ==background) {
+      bgC[j].setAttribute( 'selected', 'selected' );
+    }
+    else { bgC[i].removeAttribute( "selected" ); }
+  }
+  backupdate();
 }
 
 function logout(){

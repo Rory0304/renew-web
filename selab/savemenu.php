@@ -1,9 +1,5 @@
 <?php
-session_start();
-
-    // isset($_SESSION['ID']) {
-    //   $id = $_SESSION['ID'];
-    // }
+    session_start();
 
     $nav = $_POST["nav"];
     $font = $_POST["selectFontFamily"];
@@ -14,9 +10,6 @@ session_start();
     $_SESSION['font'] = $font;
     $_SESSION['fontsize'] = $fontsize;
     $_SESSION['bg'] = $background;
-    //$background = $db->quote($background);
-
 
     header("Location: ".$_SERVER['HTTP_REFERER']);
-
 ?>
