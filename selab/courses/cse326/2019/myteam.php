@@ -1,9 +1,5 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html>
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="utf-8" />
 	<title>Software Engineering Lab - Courses: Web Application Development</title>
@@ -14,11 +10,11 @@ session_start();
 	<link rel="stylesheet" href="../../styles/course-home.css" type="text/css" />
 	<link rel="stylesheet" href="../../styles/card.css" type="text/css" />
 	<link rel="stylesheet" id = "backcss" href="../../../common/styles/theme1.css" type="text/css" />
+
 	<script type="text/javascript" src="../../../common/scripts/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="../../../common/scripts/jquery-ui.js"></script>
 	<script type="text/javascript" src="../../../common/scripts/buffered-keyup.js"></script>
 	<script type="text/javascript" src="../../../common/scripts/common.js"></script>
-	<!-- <script type="text/javascript" src="../../scripts/course-page.js"></script> -->
 	<script type="text/javascript" src="../../scripts/team.js"></script>
 
 </head>
@@ -26,6 +22,13 @@ session_start();
 <body>
 	<?php
 	session_start();
+	if (isset($_SESSION['nav']) && isset($_SESSION['font']) && isset($_SESSION['fontsize']) && isset($_SESSION['bg'])) {
+		$nav = $_SESSION['nav'];
+		$font = $_SESSION['font'];
+		$fontsize = $_SESSION['fontsize'];
+		$background = $_SESSION['bg'];
+		$all = true;
+	}
 	?>
 	<header role="banner" class="header">
 		<div class="container">
@@ -122,6 +125,7 @@ session_start();
 		</div>
 	</div>
 
+	<?php if ($all == true) {echo "<script> changeForm('$nav','$font','$fontsize','$background'); </script>"; } ?>
 	<main role="main">
 		<div id="sideNav">
 			<div class="nav-list-left">

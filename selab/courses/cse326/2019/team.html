@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="utf-8" />
 	<title>Software Engineering Lab - Courses: Web Application Development</title>
@@ -27,9 +26,16 @@
 	session_start();
 	if (!isset($_SESSION["ID"])) {
 	echo "<script>location.replace('index.html')</script>";
-}
-$num = $_SESSION["ID"];
-?>
+	}
+	if (isset($_SESSION['nav']) && isset($_SESSION['font']) && isset($_SESSION['fontsize']) && isset($_SESSION['bg'])) {
+		$nav = $_SESSION['nav'];
+		$font = $_SESSION['font'];
+		$fontsize = $_SESSION['fontsize'];
+		$background = $_SESSION['bg'];
+		$all = true;
+	}
+	$num = $_SESSION["ID"];
+	?>
 <header role="banner" class="header">
 	<div class="container">
 		<nav>
@@ -125,6 +131,7 @@ $num = $_SESSION["ID"];
 	</div>
 </div>
 
+<?php if ($all == true) {echo "<script> changeForm('$nav','$font','$fontsize','$background'); </script>"; } ?>
 <main role="main">
 	<div id="sideNav">
 		<div class="nav-list-left">

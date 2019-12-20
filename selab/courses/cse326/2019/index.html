@@ -1,14 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
-
-<!-- Mirrored from selab.hanyang.ac.kr/courses/cse326/2019/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Nov 2019 07:38:27 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 	<meta charset="utf-8" />
 	<title>Software Engineering Lab - Courses: Web Application Development</title>
-	<!--[if IE]>
-	<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 	<link rel="stylesheet" href="../../../common/styles/reset-1.6.1.css" type="text/css" />
 	<link rel="stylesheet" href="../../../common/styles/jquery-ui.css" type="text/css" />
 	<link rel="stylesheet" href="../../../common/styles/font-awesome-4.0.3/css/font-awesome.min.css" type="text/css" />
@@ -16,19 +10,24 @@
 	<link rel="stylesheet" id = "backcss" href="../../../common/styles/theme1.css" type="text/css" />
 	<link rel="shortcut icon" href="../../../common/images/SelabFavicon.png" type="image/png">
 	<link rel="stylesheet" href="../../styles/course-home.css" type="text/css" />
-	<!-- <link rel="stylesheet" href="../../styles/course-slides.css" type="text/css" /> -->
-	<link rel="stylesheet" id = "backcss" href="../../../home/styles/theme1.css" type="text/css" />
+
 	<script type="text/javascript" src="../../../common/scripts/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="../../../common/scripts/jquery-ui.js"></script>
 	<script type="text/javascript" src="../../../common/scripts/buffered-keyup.js"></script>
 	<script type="text/javascript" src="../../../common/scripts/common.js"></script>
-	<!-- <script type="text/javascript" src="../../scripts/course-page.js"></script> -->
 
 </head>
 
 <body>
 	<?php
 		session_start();
+		if (isset($_SESSION['nav']) && isset($_SESSION['font']) && isset($_SESSION['fontsize']) && isset($_SESSION['bg'])) {
+			$nav = $_SESSION['nav'];
+			$font = $_SESSION['font'];
+			$fontsize = $_SESSION['fontsize'];
+			$background = $_SESSION['bg'];
+			$all = true;
+		}
 	?>
 	<header role="banner" class="header">
 		<div class="container">
@@ -49,7 +48,6 @@
 						<?php
 						}
 					?>
-<!-- 					<a href="../../../login/index4e7d.html?source=/index.php"> <img src="../../../common/images/vpn_key-24px.svg" alt="login"> </a> -->
 				</div>
 
 				<a id="contact" href="../../../contact/index.html" class='pull-right'> <img src="../../../common/images/phone-24px.svg" alt="contact"> </a>
@@ -127,6 +125,7 @@
 		</div>
 	</div>
 
+	<?php if ($all == true) {echo "<script> changeForm('$nav','$font','$fontsize','$background'); </script>"; } ?>
 	<main role="main">
 		<div id="sideNav">
 			<div class="nav-list-left">
@@ -142,7 +141,6 @@
 						<?php
 						}
 					?>
-<!-- 					<a href="../../../login/index4e7d.html?source=/index.php"> <img src="../../../common/images/vpn_key-24px.svg" alt="login"> </a> -->
 				</div>
 				<a id="sideContact" href="../../../contact/index.html"> <img src="../../../common/images/phone-24px.svg" alt="contact"> </a>
 			</div>
@@ -316,35 +314,6 @@
 			    	</ul>
 			  	</div>
 
-<!--
-  <div class="wrap-subcontent last">
-    <h3>Midterm Notice</h3>
-    <ul>
-      <li>10/25(fri) 13:00 ~ 16:00</li>
-      <li>12:50 까지 강의실로 와주세요 / Please come to the classroom by 12:50</li>
-      <li>Laptop 파워 부족한 분들은 본인이 직접 멀티탭 챙겨오셔야 합니다 / If you do not have enough Laptop power, you should bring your own power strip</li>
-      <li>
-        PC실습실01 (4공학관) / PC Lab 01 (4th Eng)
-        <ul>
-          <li><strong>랩탑 사용자 중 다음 인원 / Use Laptop</strong></li>
-            <ul>
-              <li>Xiang Fangsong, Shu Zhuwen, Frederik Bonde, Tsoy Sergey</li>
-              <li>Zhou Xueyi, Ana Carolina Cardoso, 김우정, 이효원(2016003845), 강민제</li>
-              <li>한동연, 박예림, 이지선, 사은수, 김용준, 유영민, 김태웅, 이무경</li>
-            </ul>
-          <li><strong>실습실 데스크탑 사용자들 (모든 랩탑 미사용자들)</strong></li>
-        </ul>
-      </li>
-      <li>
-        학술관 101호
-        <ul>
-          <li>위 목록에 이름이 없는 Laptop사용 학생은 모두 학술관 101호 입니다.</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
--->
-
 				  <div class="wrap-subcontent last">
 				    <h3>Assessments</h3>
 				    <ul>
@@ -365,6 +334,4 @@
 	</div>
 </footer>
 </body>
-
-<!-- Mirrored from selab.hanyang.ac.kr/courses/cse326/2019/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Nov 2019 07:38:34 GMT -->
 </html>
