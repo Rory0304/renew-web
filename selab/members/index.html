@@ -26,6 +26,13 @@
 <body>
 	<?php
 		session_start();
+		if (isset($_SESSION['nav']) && isset($_SESSION['font']) && isset($_SESSION['fontsize']) && isset($_SESSION['bg'])) {
+			$nav = $_SESSION['nav'];
+			$font = $_SESSION['font'];
+			$fontsize = $_SESSION['fontsize'];
+			$background = $_SESSION['bg'];
+			$all = true;
+		}
 	?>
 	<header role="banner" class="header">
 		<div class="container">
@@ -123,7 +130,7 @@
 			</form>
 		</div>
 	</div>
-
+	<?php if ($all == true) {echo "<script> changeForm('$nav','$font','$fontsize','$background'); </script>"; } ?>
 	<main role="main">
 		<div id="sideNav">
 			<div class="nav-list-left">

@@ -206,6 +206,19 @@ function savemenu() {
   document.getElementById("saveOr").value = order;
 }
 
+function changeForm(nav,font,fontsize,background) {
+  console.log(nav);
+  var navArr = document.getElementsByName("nav");
+  console.log("aa");
+  for (var i=0; i<navArr.length; i++) {
+    console.log(navArr[i].value);
+    if (navArr[i].value == nav) {
+      navArr[i].checked = true;
+    }
+    else { navArr[i].checked = false; }
+  }
+}
+
 function logout(){
   alert("로그아웃 되었습니다.");
 }
