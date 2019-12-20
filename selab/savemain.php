@@ -6,7 +6,7 @@
     $fontsize = $_POST["selectfontsize"];
     $background = $_POST["selectBackground"];
 
-    //$_SESSION['nav'] = $nav;
+    $_SESSION['nav'] = 'top';
     $_SESSION['font'] = $font;
     $_SESSION['fontsize'] = $fontsize;
     $_SESSION['bg'] = $background;
