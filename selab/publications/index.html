@@ -4,9 +4,6 @@
 	<meta charset="utf-8" />
 
 	<title>Software Engineering Lab - Publications</title>
-		<!--[if IE]>
-		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 	<link rel="stylesheet" href="../common/styles/reset-1.6.1.css" type="text/css" /> <!--header, images size -->
 	<link rel="stylesheet" href="../common/styles/jquery-ui.css" type="text/css" />
 	<link rel="stylesheet" href="../common/styles/font-awesome-4.0.3/css/font-awesome.min.css" type="text/css" />
@@ -26,6 +23,13 @@
 <body>
 	<?php
 		session_start();
+		if (isset($_SESSION['nav']) && isset($_SESSION['font']) && isset($_SESSION['fontsize']) && isset($_SESSION['bg'])) {
+			$nav = $_SESSION['nav'];
+			$font = $_SESSION['font'];
+			$fontsize = $_SESSION['fontsize'];
+			$background = $_SESSION['bg'];
+			$all = true;
+		}
 	?>
 	<header role="banner" class="header">
 		<div class="container">
@@ -122,7 +126,7 @@
 			</form>
 		</div>
 	</div>
-
+	<?php if ($all == true) {echo "<script> changeForm('$nav','$font','$fontsize','$background'); </script>"; } ?>
 	<main role="main">
 		<div id="sideNav">
 			<div class="nav-list-left">
@@ -137,7 +141,6 @@
 						<?php
 						}
 					?>
-<!-- 					<a href="../login/index4e7d.html?source=/index.php"> <img src="../common/images/vpn_key-24px.svg" alt="login"> </a> -->
 				</div>
 				<a id="sideContact" href="../contact/index.html"> <img src="../common/images/phone-24px.svg" alt="contact"> </a>
 			</div>
