@@ -217,28 +217,32 @@ function changeForm(nav,font,fontsize,background) {
     }
   }
 
-  var fontMother = document.getElementById("fontselect");
-  var fontC = fontMother.childNodes;
-  for(var j=0; j<fontC.length; j++) {
-    if (typeof fontC[j] == "undfined") {continue;}
-    if (fontC[j].value == font) {
-      console.log(fontC[j].value);
-      fontC[j].setAttribute( 'selected', 'selected' );
+  if (font != "font") {
+    var fontMother = document.getElementById("fontselect");
+    var fontC = fontMother.childNodes;
+    for(var j=0; j<fontC.length; j++) {
+      if (typeof fontC[j] == "undfined") {continue;}
+      if (fontC[j].value == font) {
+        console.log(fontC[j].value);
+        fontC[j].setAttribute( 'selected', 'selected' );
+      }
+      //else { fontC[i].removeAttribute( "selected" ); }
     }
-    //else { fontC[i].removeAttribute( "selected" ); }
+    fontupdate('fontstyle');
   }
-  fontupdate('fontstyle');
 
-  var fontsizeMother = document.getElementById("fontsizeSlect");
-  var fontsizeC = fontsizeMother.childNodes;
-  for(var j=0; j<fontsizeC.length; j++) {
-    if (typeof (fontsizeC[j]) == "undfined") {continue; console.log(aa);}
-    if (fontsizeC[j].value == fontsize) {
-      fontsizeC[j].setAttribute( 'selected', 'selected' );
+  if (fontsize != "fontsize") {
+    var fontsizeMother = document.getElementById("fontsizeSlect");
+    var fontsizeC = fontsizeMother.childNodes;
+    for(var j=0; j<fontsizeC.length; j++) {
+      if (typeof (fontsizeC[j]) == "undfined") {continue; console.log(aa);}
+      if (fontsizeC[j].value == fontsize) {
+        fontsizeC[j].setAttribute( 'selected', 'selected' );
+      }
+      //else { fontsizeC[i].removeAttribute( "selected" ); }
     }
-    //else { fontsizeC[i].removeAttribute( "selected" ); }
+    fontupdate('sizeTC');
   }
-  fontupdate('sizeTC');
 
   var bgMother = document.getElementById("backselect");
   var bgC = bgMother.childNodes;
