@@ -21,13 +21,6 @@
         var_dump($q_day);
         echo "</pre>";
 
-        #sender 의 teamname
-        $check = "SELECT * FROM member WHERE studentNum = $q_sender";
-        $rows = $db->query($check);
-        $results = $rows->fetchAll();
-        $teamname = $results[0]["teamname"];
-        $q_teamname = $db->quote($teamname);
-
         echo "<pre>";
         var_dump($q_teamname);
         echo "</pre>";
@@ -48,17 +41,17 @@
             $results = $rows->fetchAll();
             if (count($results) == 1) {
                 $db->exec("DELETE FROM team
-                        WHERE 
+                        WHERE
                         teamname = $q_myteam");
             }
         }
 
         $db->exec("UPDATE member SET
-                    teamname=$q_teamname
+                    teamname=$q_sender
                     WHERE studentNum = $q_mynum");
 
         $db->exec("DELETE FROM message
-                    WHERE 
+                    WHERE
                     sender = $q_sender and
                     receiver = $q_mynum and
                     sendDay = $q_day");

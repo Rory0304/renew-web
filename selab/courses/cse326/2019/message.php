@@ -187,7 +187,7 @@
 							<ul id="mes_get">
 								<li class="subject">
 									<ul>
-										<li class="person pull-left">보낸 사람</li>
+										<li class="person pull-left">보낸 팀</li>
 										<li class="time pull-left">보낸 시간</li>
 										<li class="but pull-left">수락</li>
 									</ul>
@@ -202,7 +202,7 @@
 								?>
 								<li class="mes">
 									<ul>
-										<li class="person pull-left"><?=$name[0]["name"]?></li>
+										<li class="person pull-left"><?= $num ?></li>
 										<li class="time pull-left"><?=$result["sendDay"]?></li>
 										<li class="but pull-left">
 											<form action="php/receive.php" method="POST">
@@ -220,9 +220,15 @@
 							</ul>
 							<span></span>
 							<?php
-								$check = "SELECT * FROM message WHERE sender = $id";
-								$rows = $db->query($check);
-								$results = $rows->fetchAll();
+							$check = "SELECT * FROM member WHERE studentNum = $id";
+							$rows = $db->query($check);
+							$results = $rows->fetchAll();
+							$teamname = $results[0]["teamname"];
+							$q_teamname = $db->quote($teamname);
+
+							$check = "SELECT * FROM message WHERE sender = $q_teamname";
+							$rows = $db->query($check);
+							$results = $rows->fetchAll();
 							?>
 							<p class="mestitle">보낸 메세지</p>
 							<ul id="mes_send">
