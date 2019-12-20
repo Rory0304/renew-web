@@ -1,3 +1,3 @@
 $(function(){
-	j$( "#sortable" ).sortable();
+	$( "#sortable" ).sortable();
 })

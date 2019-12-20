@@ -186,10 +186,10 @@ function navigation() {
 }
 
 // function for make index sortable
-$(function(){
-	$( "#menu ul" ).sortable();
-  $( ".nav-list-right" ).sortable();
-})
+// $(function(){
+// 	$( "#menu ul" ).sortable();
+//   $( ".nav-list-right" ).sortable();
+// })
 
 //function for save,
 // function saveorder() {
@@ -199,49 +199,55 @@ $(function(){
 //   document.getElementById("saveOr").value = order;
 // }
 
-function savemenu() {
-  var temp = document.getElementsByClassName("ui-sortable");
-  var order = temp[0].innerHTML;
-
-  document.getElementById("saveOr").value = order;
-}
+// function savemenu() {
+//   var temp = document.getElementsByClassName("ui-sortable");
+//   var order = temp[0].innerHTML;
+//
+//   document.getElementById("saveOr").value = order;
+// }
 
 function changeForm(nav,font,fontsize,background) {
-  var navArr = document.getElementsByName("nav");
-  for (var i=0; i<navArr.length; i++) {
-    if (navArr[i].value == nav) {
-      navArr[i].checked = true;
+  if (nav != "main") {
+    var navArr = document.getElementsByName("nav");
+    for (var i=0; i<navArr.length; i++) {
+      if (navArr[i].value == nav) {
+        navArr[i].checked = true;
+      }
+      else { navArr[i].checked = false; }
     }
-    else { navArr[i].checked = false; }
   }
 
   var fontMother = document.getElementById("fontselect");
   var fontC = fontMother.childNodes;
   for(var j=0; j<fontC.length; j++) {
+    if (typeof fontC[j] == "undfined") {continue;}
     if (fontC[j].value == font) {
+      console.log(fontC[j].value);
       fontC[j].setAttribute( 'selected', 'selected' );
     }
-    else { fontC[i].removeAttribute( "selected" ); }
+    //else { fontC[i].removeAttribute( "selected" ); }
   }
   fontupdate('fontstyle');
 
   var fontsizeMother = document.getElementById("fontsizeSlect");
   var fontsizeC = fontsizeMother.childNodes;
   for(var j=0; j<fontsizeC.length; j++) {
+    if (typeof (fontsizeC[j]) == "undfined") {continue; console.log(aa);}
     if (fontsizeC[j].value == fontsize) {
       fontsizeC[j].setAttribute( 'selected', 'selected' );
     }
-    else { fontsizeC[i].removeAttribute( "selected" ); }
+    //else { fontsizeC[i].removeAttribute( "selected" ); }
   }
   fontupdate('sizeTC');
 
   var bgMother = document.getElementById("backselect");
   var bgC = bgMother.childNodes;
   for(var j=0; j<bgC.length; j++) {
+    if (typeof bgC[j] == "undfined") {continue;}
     if (bgC[j].value ==background) {
       bgC[j].setAttribute( 'selected', 'selected' );
     }
-    else { bgC[i].removeAttribute( "selected" ); }
+    //else { bgC[i].removeAttribute( "selected" ); }
   }
   backupdate();
 }
